@@ -1,0 +1,821 @@
+
+// * Iphone 12 CSS Mockup * //
+
+// ? Variables ===============
+
+// ! Red iphone
+$iphone-color: #fd4949;
+$button-color: rgb(253,73,73);
+$iphone-border: #000004;
+$white: #FEFEFF;
+//  ! White iphone
+// $iphone-color: #F8F2EB;
+// $button-color: #F8F2EB;
+// $iphone-border: #000004;
+
+// ? Main CSS ================
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+:root {
+    --ggs: .6;
+}
+i{
+    display: inline-block !important;
+}
+main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background-image: url('/img/test.png');
+    // background-size: contain;
+    // background-position: center;
+    
+}
+
+.iphone-12{
+    width: 46.5vh;
+    height: 93.5vh;
+    position: relative;
+    
+    .buttons{
+        .sound-off{
+            box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.5) inset;
+            background: $button-color;
+            background: linear-gradient(144deg, rgba(253,73,73,1) 0%, rgb(189, 33, 33) 100%);
+            width: 10px;
+            height: 35px;
+            position: absolute;
+            top: 15vh;
+            left: -5px;
+            border-radius: 2px;
+        }
+
+        .volume-up{
+            box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.5) inset;
+            background: $button-color;
+            background: linear-gradient(144deg, rgba(253,73,73,1) 0%, rgb(189, 33, 33) 100%);
+            width: 10px;
+            height: 55px;
+            position: absolute;
+            top: 22vh;
+            left: -5px;
+            border-radius: 2px;
+        }
+
+        .volume-down{
+            box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.5) inset;
+            background: $button-color;
+            background: linear-gradient(144deg, rgba(253,73,73,1) 0%, rgb(189, 33, 33) 100%);
+            width: 10px;
+            height: 55px;
+            position: absolute;
+            top: 30.4vh;
+            left: -5px;
+            border-radius: 2px;
+        }
+    }
+}
+.phone-front{
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: $iphone-color;
+    box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.5) inset;
+    border-radius: 65px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .antenna{
+        background-color:lighten($iphone-color, 9%);
+        width: 100%;
+        height: .5em;
+        position: absolute;
+        left: 0;
+        z-index: -1;
+        &.antenna-1{
+            top: 5em;
+        }
+        &.antenna-2{
+            bottom: 5em;
+        }
+    }
+    .antenna-vertical{
+        background-color: lighten($iphone-color, 9%);
+        width:.5em;
+        height: 50%  ;
+        position: absolute;
+        z-index: -1;
+
+        &.antenna-v-1{
+            top: 0;
+            right: 6em;
+        }
+
+        &.antenna-v-2{
+            bottom: 0;
+            left: 6em;
+        }
+    }
+    .border{
+        width: 97.5%;
+        height: 98.5%;
+        background-color: $iphone-border;
+        border-radius: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .screen{
+            position: relative;
+            width: 93.5%;
+            height: 97%;
+            border-radius: 49px;
+            background: rgb(86,54,65);
+            background: linear-gradient(75deg, rgba(86,54,65,1) 0%, rgba(42,35,44,1) 100%);
+            overflow: hidden;
+            &:hover{
+                .screen-2{
+                    top: -2000px;
+                    transition: all 1.6s;
+                }
+            }
+            .notch{
+                background-color:$iphone-border;
+                position: absolute;
+                top: -5px;
+                width: 50%;
+                height: 3.7vh;
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+                left: 50%;
+                transform: translate(-50%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 2;
+                .speaker{
+                    width: 24%;
+                    height: 14%;
+                    border-radius: 50px;
+                    background-color: #202021;
+                    box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.37) inset;
+                    margin-bottom: .4em;                    
+                }
+                .camera{
+                    width: .65em;
+                    height: .65em;
+                    margin-left: .55em;
+                    border-radius: 100px;
+                    background-color: #1a1a22;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: .4em;
+                    .lens-1{
+                        width: .3em;
+                        height: .3em;
+                        border-radius: 50px;
+                        background: rgb(123,149,255);
+                        background: linear-gradient(144deg, rgba(123,149,255,1) 0%, rgba(0,0,0,1) 48%, rgba(123,149,255,1) 100%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.screen-1{
+    width: 100%;
+    height: 100%;
+    border-radius: 49px;
+    background:rgba(0, 0, 0, 0.082);
+    z-index: -1;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+    .ipod-battery{
+        background-color: white;
+        height: fit-content;
+        padding: .2em 1.5em;
+        border-radius: 100px;
+        text-align: center;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        margin-top: 9%;
+        span{
+            font-size: .6rem;
+        }
+        span:first-child{
+            font-weight: 700;
+        }
+        span:last-child{
+            display: flex;
+            align-items: center;
+        }
+    }
+    .album-cover{
+        margin-top: 2.5%;
+        width: 88%;
+        height: 40%;
+        background-color: black;
+        background-image: url('../img/cover.jpg');
+        background-size: contain;
+        background-position: center;
+        border-radius: 10px;
+        box-shadow: 0px 10px 20px #00000045;
+    }
+    
+    .media-player{
+        margin-top: 7%;
+        width: 88%;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        .song-name{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .name{
+                display: flex;
+                flex-flow: column;
+                color: $white;
+                font-size: .9rem;
+                strong{
+                    font-weight: 600;
+                }
+                span{
+                    color: rgba(255, 255, 255, 0.473);
+                    font-size: .8rem;
+                }
+            }
+            section{
+                color: $white;
+                padding: 8px;
+                height: fit-content;
+                border-radius: 50px;
+                background-color: rgba(255, 255, 255, 0.12);
+                cursor: pointer;
+            }
+        }
+        .song-time{
+            margin-top: 6%;
+            .slider {
+                appearance: none;
+                width: 100%; 
+                height: 2px;
+                background: rgba(255, 255, 255, 0.527); 
+                outline: none; 
+                opacity: 0.7;
+                -webkit-transition: .2s; 
+                transition: opacity .2s;
+            }
+            section{
+                font-size: .6rem;
+                color:  rgba(255, 255, 255, 0.25);
+                display: flex;
+                justify-content: space-between;
+                margin-top: .2rem;
+            }
+            
+            /* Mouse-over effects */
+            .slider:hover {
+                opacity: 1; 
+            }
+            
+            /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+            .slider::-webkit-slider-thumb {
+                -webkit-appearance: none; 
+                appearance: none;
+                width: 5px; 
+                height: 5px; 
+                background: $white; 
+                border-radius: 30px;
+                cursor: pointer; 
+                
+            }
+            
+            .slider::-moz-range-thumb {
+                width: 5px; 
+                height: 5px; 
+                background: $white; 
+                border-radius: 30px;
+                cursor: pointer; 
+            }
+        }
+        .volume-slider{
+            display: flex;
+            align-items: center;
+            margin-top: 20%;
+            i{
+                color: rgba(255, 255, 255, 0.527);
+                &:first-child{
+                    &::after{
+                        display: none;
+                    }
+                }
+            }
+            .slider {
+                appearance: none;
+                width: 100%; 
+                margin-left: 4%;
+                margin-right: 2%;
+                height: 2px;
+                background: rgba(255, 255, 255, 0.527); 
+                outline: none; 
+                opacity: 0.7;
+                -webkit-transition: .2s; 
+                transition: opacity .2s;
+            }
+            /* Mouse-over effects */
+            .slider:hover {
+                opacity: 1; 
+            }
+            
+            /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+            .slider::-webkit-slider-thumb {
+                -webkit-appearance: none; 
+                appearance: none;
+                width: 14px; 
+                height: 14px; 
+                background: $white; 
+                border-radius: 30px;
+                cursor: pointer; 
+                
+            }
+            
+            .slider::-moz-range-thumb {
+                width: 10px; 
+                height: 10px; 
+                background: $white; 
+                border-radius: 30px;
+                cursor: pointer; 
+            }
+        }
+        .bottom-icons{
+            margin-top: 20%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            i{
+                color: rgba(255, 255, 255, 0.32);
+                --ggs:.85;
+                transition: all .3s;
+                &:hover{
+                    color: rgba(255, 255, 255, 0.52);
+                    cursor: pointer;
+                    transition: all .3s;
+                }
+            }
+        }
+        .controls{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 15%;
+            color: #fff;
+            i{
+                --ggs:2.5;
+            }
+        }
+        .tylor-ipad{
+            margin-top: 3%;
+            color: rgba(255, 255, 255, 0.32);
+            font-size: .65rem;
+            font-weight: 600;
+            margin-left: 50%;
+            transform: translate(-50%);
+            text-align: center;
+        }
+    }
+    .navigation-bar{
+        width: 35%;
+        height: 4px;
+        background-color:$white;
+        border-radius: 20px;
+        margin-bottom: 2%;
+    }
+}
+.screen-2{
+    width: 100%;
+    height: 100%;
+    border-radius: 49px;
+    background-image: url('/img//locks.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    flex-flow: column;
+    align-items: center;
+    transition: all 1.6s;
+
+    .gg-lock-unlock{
+        color: 2;
+        margin-top: 13%;
+        color: $white;
+        --ggs:1.2;
+    }
+
+    .clock{
+        margin-top: 8%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        color: $white;
+        h1{
+            font-size: 4rem;
+            font-weight: 300;
+        }
+        span{
+            font-size: 1.15rem;
+        }
+    }
+    
+    .notification{
+        width: 95%;
+        border-radius: 10px;
+        padding: .6rem;
+        margin-top: 7%;
+        position: relative;
+        overflow: hidden;
+        .notification-bg{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top:0;
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.626);
+            filter: blur(10px);
+            z-index: -1;
+        }
+        .header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            section{
+                display: flex;
+                align-items: center;
+                span{
+                    margin-left: .5rem;
+                    font-size: .7rem;
+                }
+            }
+            span{
+                font-size: .7rem;
+            }
+            .red-icon{
+                color: $white;
+                background-color: red;
+                border-radius: 6px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 18px;
+                height: 18px;
+            }
+        }
+        .body{
+            display: flex;
+            flex-flow: column;
+            margin-top: .5rem;
+            span,strong{
+                font-size: .89rem;
+            }
+        }
+    }
+}
+.phone-back{
+    width: 100%;
+    height: 100%;
+    box-shadow:0px 0px 50px #0000008c;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 65px;
+
+}
+
+
+
+
+// ? ICONS
+
+// Battery
+.gg-battery {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    width: 25px;
+    height: 12px;
+    transform: scale(var(--ggs,1));
+    border: 1px solid gray;
+    border-radius: 3px;
+    margin-left: -3px;
+    margin-top: 1px;
+}
+.gg-battery::after,
+.gg-battery::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    height: 8px;
+    border-radius: 2px;
+    background: currentColor;
+    top: 1px;
+    background-color: gray;
+}
+.gg-battery::before {
+    right: -4px;
+    border-radius: 3px;
+    width: 2px;
+    background-color: rgb(173, 173, 173);
+}
+.gg-battery::after {
+    width: 5px;
+    left: 1px;
+    background-color: rgb(243, 44, 44);
+}
+
+// Pause
+.gg-play-pause {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    width: 8px;
+    height: 10px;
+    border-left: 3px solid;
+    border-right: 3px solid;
+    transition: all .3s;
+    cursor: pointer;
+    &:hover{
+        transform: scale(3.1);
+        transition: all .3s;
+    }
+}
+
+// Next song
+.gg-play-forwards {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    height: 10px;
+    background: currentColor;
+    transition: all .3s;
+    cursor: pointer;
+    &:hover{
+        transform: scale(3.1);
+        transition: all .3s;
+    }
+ }
+ .gg-play-forwards::after,
+ .gg-play-forwards::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 0;
+    height: 7px;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 7px solid;
+    left: -7px;
+ }
+ .gg-play-forwards::before {
+    left: -13px;
+ }
+
+//  Previous song
+.gg-play-backwards {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    height: 10px;
+    background: currentColor;
+    transition: all .3s;
+    cursor: pointer;
+    &:hover{
+        transform: scale(3.1);
+        transition: all .3s;
+    }
+}
+.gg-play-backwards::after,
+.gg-play-backwards::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 0;
+    height: 7px;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-right: 7px solid;
+    right: -7px
+}
+.gg-play-backwards::before {
+    right: -13px
+}
+
+// Volume up
+.gg-volume {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    width: 8px;
+    height: 8px;
+    border: 1px solid;
+    border-right: 0;
+    -webkit-perspective: 12px;
+    perspective: 12px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px
+}
+.gg-volume::after,
+.gg-volume::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute
+}
+.gg-volume::before {
+    left: 2px;
+    transform: rotateY(-90deg);
+    width: 10px;
+    height: 10px;
+    border: 1px solid;
+    border-left: 0;
+    top: -3px
+}
+.gg-volume::after {
+    width: 8px;
+    height: 16px;
+    border: 3.5px double;
+    border-left: 0;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    right: -14px;
+    top: -6px
+}
+
+// Podcast
+.gg-media-podcast {
+    transform: scale(var(--ggs,1))
+}
+.gg-media-podcast,
+.gg-media-podcast::after,
+.gg-media-podcast::before {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid;
+    border-bottom-color: transparent;
+    border-radius: 50%
+}
+.gg-media-podcast::after,
+.gg-media-podcast::before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    top: 2px;
+    left: 2px
+}
+.gg-media-podcast::after {
+    width: 22px;
+    height: 22px;
+    top: -6px;
+    left: -6px
+}
+
+// Playlist Add
+.gg-play-list-add {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    width: 12px;
+    height: 6px;
+    border-top: 0 solid transparent;
+    border-bottom: 2px solid transparent;
+    box-shadow:
+        inset 0 -2px 0,
+        -2px 4px 0 -2px,
+        0 -2px 0 0
+}
+.gg-play-list-add::after,
+.gg-play-list-add::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    background: currentColor;
+    top: 6px;
+    right: -8px
+}
+.gg-play-list-add::before {
+    width: 2px;
+    height: 10px;
+    top: 2px;
+    right: -4px
+}
+
+// Comment
+.gg-comment {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    width: 20px;
+    height: 16px;
+    border: 2px solid;
+    border-bottom: 0;
+    box-shadow:
+        -6px 8px 0 -6px,
+        6px 8px 0 -6px
+}
+.gg-comment::after,
+.gg-comment::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 8px
+}
+.gg-comment::before {
+    border: 2px solid;
+    border-top-color: transparent;
+    border-bottom-left-radius: 20px;
+    right: 4px;
+    bottom: -6px;
+    height: 6px
+}
+.gg-comment::after {
+    height: 2px;
+    background: currentColor;
+    box-shadow: 0 4px 0 0;
+    left: 4px;
+    top: 4px
+}
+
+// Lock
+.gg-lock-unlock {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    width: 12px;
+    height: 6px;
+    border: 2px solid;
+    border-top-right-radius: 100px;
+    border-top-left-radius: 100px;
+    border-bottom: transparent;
+    margin-top: -18px;
+    margin-left: -2px
+}
+.gg-lock-unlock::after,
+.gg-lock-unlock::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute
+}
+.gg-lock-unlock::after {
+    border: 2px solid transparent;
+    box-shadow: 0 0 0 2px;
+    background-color: #fff;
+    width: 16px;
+    height: 10px;
+    border-radius: 2px;
+    left: -4px;
+    top: 10px
+}
+.gg-lock-unlock::before {
+    width: 2px;
+    height: 6px;
+    background: currentColor;
+    left: -2px;
+    top: 4px;
+}
