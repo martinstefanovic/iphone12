@@ -32,9 +32,10 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url('/img/locks.jpg');
     // background-image: url('/img/test.png');
-    // background-size: contain;
-    // background-position: center;
+    background-size: cover;
+    background-position: center;
     
 }
 
@@ -42,7 +43,7 @@ main{
     width: 46.5vh;
     height: 93.5vh;
     position: relative;
-    
+    z-index: 1;
     .buttons{
         .sound-off{
             box-shadow: 0 0.1em 0.4em rgba(0, 0, 0, 0.5) inset;
@@ -137,7 +138,7 @@ main{
             height: 97%;
             border-radius: 49px;
             background: rgb(86,54,65);
-            background: linear-gradient(75deg, rgba(86,54,65,1) 0%, rgba(42,35,44,1) 100%);
+            background: linear-gradient(75deg, #7f4e5f 0%, #291a2d 100%);
             overflow: hidden;
             &:hover{
                 .screen-2{
@@ -408,7 +409,7 @@ main{
     width: 100%;
     height: 100%;
     border-radius: 49px;
-    background-image: url('/img//locks.jpg');
+    background-image: url('/img/locks.jpg');
     background-size: cover;
     background-position: center;
     z-index: -1;
@@ -418,7 +419,13 @@ main{
     top: 0;
     flex-flow: column;
     align-items: center;
+    justify-content: space-between;
     transition: all 1.6s;
+    section{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
 
     .gg-lock-unlock{
         color: 2;
@@ -441,6 +448,14 @@ main{
         span{
             font-size: 1.15rem;
         }
+    }
+
+    .navigation-bar{
+        width: 35%;
+        height: 4px;
+        background-color:$white;
+        border-radius: 20px;
+        margin-bottom: 2%;
     }
     
     .notification{
@@ -467,6 +482,7 @@ main{
             section{
                 display: flex;
                 align-items: center;
+                flex-flow: row;
                 span{
                     margin-left: .5rem;
                     font-size: .7rem;
@@ -491,7 +507,7 @@ main{
             flex-flow: column;
             margin-top: .5rem;
             span,strong{
-                font-size: .89rem;
+                font-size: .8rem;
             }
         }
     }
@@ -508,7 +524,69 @@ main{
 
 }
 
+// ! INFO
 
+.info{
+    width: fit-content;
+    min-width: 300px;
+    border-radius: 10px;
+    padding: .6rem;
+    position: fixed;
+    right: 2.5vw;
+    bottom: 4vh;
+    overflow: hidden;
+    box-shadow: 0px 0px 40px #0000000f;
+    .mb-1{
+        margin-bottom: .6rem;
+    }
+    .info-bg{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top:0;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.626);
+        filter: blur(10px);
+        z-index: -1;
+    }
+    .header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: .7rem;
+        section{
+            display: flex;
+            align-items: center;
+            flex-flow: row;
+            span{
+                margin-left: .5rem;
+                font-size: .7rem;
+            }
+        }
+        span,a{
+            font-size: .7rem;
+        }
+        .red-icon{
+            color: $white;
+            background-color: red;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+        }
+    }
+    .body{
+        display: flex;
+        flex-flow: column;
+        margin-top: .5rem;
+        span,strong,a{
+            font-size: .8rem;
+            color: black;
+        }
+    }
+}
 
 
 // ? ICONS
@@ -818,4 +896,36 @@ main{
     background: currentColor;
     left: -2px;
     top: 4px;
+}
+
+// Info
+.gg-info {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    width: 20px;
+    height: 20px;
+    border: 2px solid;
+    border-radius: 40px
+}
+.gg-info::after,
+.gg-info::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    border-radius: 3px;
+    width: 2px;
+    background: currentColor;
+    left: 7px
+}
+.gg-info::after {
+    bottom: 2px;
+    height: 8px;
+    left: 6px;
+}
+.gg-info::before {
+    height: 2px;
+    top: 2px
 }
