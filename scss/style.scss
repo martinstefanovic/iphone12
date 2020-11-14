@@ -27,12 +27,12 @@ i{
     display: inline-block !important;
 }
 main{
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('/img/locks.jpg');
+    background-image: url('https://raw.githubusercontent.com/martinstefanovic/iphone12/main/img/locks.jpg');
     // background-image: url('/img/test.png');
     background-size: cover;
     background-position: center;
@@ -227,7 +227,7 @@ main{
         width: 88%;
         height: 40%;
         background-color: black;
-        background-image: url('../img/cover.jpg');
+        background-image: url('https://raw.githubusercontent.com/martinstefanovic/iphone12/main/img/cover.jpg');
         background-size: contain;
         background-position: center;
         border-radius: 10px;
@@ -265,6 +265,9 @@ main{
                 border-radius: 50px;
                 background-color: rgba(255, 255, 255, 0.12);
                 cursor: pointer;
+                height: 20px;
+                display: flex;
+                width: 20px;
             }
         }
         .song-time{
@@ -395,6 +398,7 @@ main{
             margin-left: 50%;
             transform: translate(-50%);
             text-align: center;
+            margin-bottom:3%;
         }
     }
     .navigation-bar{
@@ -409,7 +413,7 @@ main{
     width: 100%;
     height: 100%;
     border-radius: 49px;
-    background-image: url('/img/locks.jpg');
+    background-image: url('https://raw.githubusercontent.com/martinstefanovic/iphone12/main/img/locks.jpg');
     background-size: cover;
     background-position: center;
     z-index: -1;
@@ -449,7 +453,13 @@ main{
             font-size: 1.15rem;
         }
     }
+  .s-2-bottom{
+    display:flex;
+    flex-flow:column;
+    align-items:center;
+        width:100%;
 
+  }
     .navigation-bar{
         width: 35%;
         height: 4px;
@@ -457,7 +467,11 @@ main{
         border-radius: 20px;
         margin-bottom: 2%;
     }
-    
+  .unlock-text{
+    font-size:.65rem;
+    color:rgba(255, 255, 255, 0.4);
+    margin-bottom:.6rem
+  }
     .notification{
         width: 95%;
         border-radius: 10px;
@@ -533,9 +547,11 @@ main{
     padding: .6rem;
     position: fixed;
     right: 2.5vw;
-    bottom: 4vh;
+    // bottom: 4vh;
     overflow: hidden;
     box-shadow: 0px 0px 40px #0000000f;
+    animation: forwards info-up 1s;
+    animation-delay: 1.5s;
     .mb-1{
         margin-bottom: .6rem;
     }
@@ -585,6 +601,14 @@ main{
             font-size: .8rem;
             color: black;
         }
+    }
+}
+@keyframes info-up{
+    0%{
+        bottom: -40vh;
+    }
+    100%{
+        bottom: 4vh;
     }
 }
 
@@ -928,4 +952,32 @@ main{
 .gg-info::before {
     height: 2px;
     top: 2px
+}
+
+// More
+.gg-more-alt {
+    transform: scale(var(--ggs,1))
+}
+.gg-more-alt,
+.gg-more-alt::after,
+.gg-more-alt::before {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: currentColor;
+    border-radius: 100%
+}
+.gg-more-alt::after,
+.gg-more-alt::before {
+    content: "";
+    position: absolute;
+    top: 0
+}
+.gg-more-alt::after {
+    left: -6px
+}
+.gg-more-alt::before {
+    right: -6px
 }
